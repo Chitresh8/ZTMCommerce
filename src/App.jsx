@@ -1,12 +1,13 @@
 import { Component } from "react";
 import "./App.css";
+import MonstersRolodex from "./MonstersRolodexApplication/MonstersRolodex";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'Zihua',
-      company:'ZTM'
+      name: { firstName: "Zihua", lastName: "Zhang" },
+      company: "ZTM",
     };
   }
 
@@ -15,8 +16,25 @@ class App extends Component {
       <>
         <h1>Vite + React</h1>
         <div className="card">
-          <h1>Hello, My Name is {this.state.name}, I work at {this.state.company}.</h1>
-          <button onClick={()=>{this.setState({name:'Andrei'})}}>Change Name</button>
+          {/* <h1>
+            Hello, My Name is {this.state.name.firstName}{" "}
+            {this.state.name.lastName}, I work at {this.state.company}.
+          </h1>
+          <button
+            onClick={() => {
+              this.setState(
+                () => {
+                  return { name: { firstName: "Andrei", lastName: "Neaogie" } };
+                },
+                () => {
+                  console.log(this.state);
+                }
+              );
+            }}
+          >
+            Change Name
+          </button> */}
+          <MonstersRolodex/>
         </div>
       </>
     );
