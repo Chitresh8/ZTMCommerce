@@ -1,6 +1,8 @@
 import { Component } from "react";
 import "./App.css";
 import MonstersRolodex from "./MonstersRolodexApplication/MonstersRolodex";
+import { TodoList } from "./TodoList/TodoList";
+import WeatherApi from "./WeatherApi/WeatherApi";
 
 class App extends Component {
   constructor() {
@@ -16,7 +18,7 @@ class App extends Component {
       <>
         <h1>Vite + React</h1>
         <div className="card">
-          {/* <h1>
+          <h1>
             Hello, My Name is {this.state.name.firstName}{" "}
             {this.state.name.lastName}, I work at {this.state.company}.
           </h1>
@@ -33,8 +35,10 @@ class App extends Component {
             }}
           >
             Change Name
-          </button> */}
+          </button>
           <MonstersRolodex/>
+          {/* <TodoList/> */}
+          {/* <WeatherApi/> */}
         </div>
       </>
     );

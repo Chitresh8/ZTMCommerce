@@ -10,6 +10,7 @@ class MonstersRolodex extends Component {
       monsters: [
         /*{ name: "Linda",id:1 }, { name: "Frank",id:2 }, { name: "Jacky",id:3 },{ name: "Andrei",id:4 }*/
       ],
+      searchField:'',
     };
     console.log("1");
   }
@@ -37,7 +38,31 @@ class MonstersRolodex extends Component {
           {/* <h1>{this.state.monster1}</h1>
           <h1>{this.state.monster2}</h1>
           <h1>{this.state.monster3}</h1> */}
-          <input type='text' className='search-box' placeholder="Select Monsters" onChange={()=>{}}/>
+          <input
+            type="search"
+            className="search-box"
+            placeholder="Search Monsters"
+            onChange={(e) => {
+              // this.state(e.target.value);
+              const searchField=e.target.value.toLocaleLowerCase();
+              const filteredMonsters=this.state.monsters.filter((monster)=>{
+                // return monster.name.toLowerCase().includes(e.target.value.toLowerCase());
+                // or
+                return monster.name.toLocaleLowerCase().includes(searchField);
+                
+              })
+              if(filteredMonsters){
+                this.setState(()=>{
+                  return {monsters:filteredMonsters}
+                })
+              }else if(!filteredMonsters){
+                this.setState(()=>{
+                  return {filteredMonsters:[...this.state.monsters]}
+              });
+              }
+             
+            }}
+          />
           {this.state.monsters.map((el) => {
             return <h1 key={el.id}>{el.name}</h1>;
           })}
