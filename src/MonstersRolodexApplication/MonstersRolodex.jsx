@@ -10,6 +10,7 @@ class MonstersRolodex extends Component {
       monsters: [
         /*{ name: "Linda",id:1 }, { name: "Frank",id:2 }, { name: "Jacky",id:3 },{ name: "Andrei",id:4 }*/
       ],
+      // Procedure for search and reset the filter (Step 1) First we need to keep state that input as string and store it in useState
       searchField:'',
     };
     console.log("1");
@@ -32,6 +33,14 @@ class MonstersRolodex extends Component {
   }
   render() {
     console.log("2");
+
+    //Procdeure for search and reset the filter (Step 2) Filtered logic we need to move to the top of return and use the state to filter the monsters (aftwe includes we need to use the state for input)
+    const filteredMonsters=this.state.monsters.filter((monster)=>{
+      // return monster.name.toLowerCase().includes(e.target.value.toLowerCase());
+      // or
+      return monster.name.toLocaleLowerCase().includes(this.state.searchField);
+      
+    })
     return (
       <>
         <div className="card">
@@ -44,26 +53,16 @@ class MonstersRolodex extends Component {
             placeholder="Search Monsters"
             onChange={(e) => {
               // this.state(e.target.value);
+              //Procedure for search and reset the filter (Step 3) We need to update the state with the new value of the input
               const searchField=e.target.value.toLocaleLowerCase();
-              const filteredMonsters=this.state.monsters.filter((monster)=>{
-                // return monster.name.toLowerCase().includes(e.target.value.toLowerCase());
-                // or
-                return monster.name.toLocaleLowerCase().includes(searchField);
-                
-              })
-              if(filteredMonsters){
+//Procdeure for search and reset the filter (Step 4)  We need to set the state when we clear the input field the original data has to render
                 this.setState(()=>{
-                  return {monsters:filteredMonsters}
-                })
-              }else if(!filteredMonsters){
-                this.setState(()=>{
-                  return {filteredMonsters:[...this.state.monsters]}
-              });
-              }
-             
+                  return {searchField}
+                })             
             }}
           />
-          {this.state.monsters.map((el) => {
+          {/* Procedure for search and reset the filter (Step 5) We need to use the filtered logic name which we wrote on the filter function to map the data*/}
+          {filteredMonsters.map((el) => {
             return <h1 key={el.id}>{el.name}</h1>;
           })}
         </div>
