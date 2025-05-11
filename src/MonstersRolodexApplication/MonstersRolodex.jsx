@@ -7,6 +7,7 @@ class MonstersRolodex extends Component {
       //   monster1: { name: "Linda" },
       //   monster2: { name: "Frank" },
       //   monster3: { name: "Jacky" },
+      //   monster4: { name: "Gainda" },
       monsters: [
         /*{ name: "Linda",id:1 }, { name: "Frank",id:2 }, { name: "Jacky",id:3 },{ name: "Andrei",id:4 }*/
       ],
