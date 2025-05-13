@@ -1,0 +1,56 @@
+How They Work Together
+🧪 Test Flow Diagram
+plaintext
+Copy
+Edit
+ ┌────────────────────────────────────────────────────────────┐
+ │                          Jest                              │
+ │        (Test Runner + Assertion Library)                   │
+ │                                                            │
+ │  Reads test files (e.g. *.test.jsx)                        │
+ │  ┌──────────────────────────────────────────────────┐      │
+ │  │ describe/test/expect                             │      │
+ │  │ ┌────────────────────────────────────────────┐    │      │
+ │  │ │ React Testing Library (RTL)                │    │      │
+ │  │ │                                            │    │      │
+ │  │ │ - render(<MoviesApp />)                   │    │      │
+ │  │ │ - screen.getByText / getByRole / etc.     │    │      │
+ │  │ │ - fireEvent.click / change / etc.         │    │      │
+ │  │ └────────────────────────────────────────────┘    │      │
+ │  └──────────────────────────────────────────────────┘      │
+ └────────────────────────────────────────────────────────────┘
+🔧 How They Work in Your Code
+jsx
+Copy
+Edit
+// MoviesApp.test.jsx
+import { render, screen, fireEvent } from '@testing-library/react'; // ← RTL
+import { MoviesApp } from './MoviesApp';
+
+describe('MoviesApp', () => {
+  test('adds a movie to the list', () => {
+    render(<MoviesApp />);                               // ← RTL renders component
+    fireEvent.change(screen.getByPlaceholderText('Enter Movie Name'), {
+      target: { value: 'Inception' }
+    });                                                   // ← RTL simulates input
+    fireEvent.click(screen.getByText('Add to Watchlist')); // ← RTL simulates click
+    expect(screen.getByText('Inception')).toBeInTheDocument(); // ← Jest asserts result
+  });
+});
+⚙️ package.json (important dependencies)
+json
+Copy
+Edit
+"devDependencies": {
+  "jest": "^29.x",                    // ← Test runner
+  "@testing-library/react": "^14.x", // ← RTL core
+  "@testing-library/jest-dom": "^6.x", // ← Custom Jest matchers (e.g. toBeInTheDocument)
+  "@testing-library/user-event": "^14.x" // ← Better than fireEvent for user actions
+}
+🧩 Summary
+Tool	Responsibility
+Jest	Run tests, provide expect
+React Testing Library	Render component, interact with DOM
+jest-dom	Adds matchers like toBeInTheDocument
+user-event	Simulates realistic user behavior
+
