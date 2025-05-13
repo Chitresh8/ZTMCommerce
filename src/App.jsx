@@ -3,6 +3,7 @@ import "./App.css";
 import MonstersRolodex from "./MonstersRolodexApplication/MonstersRolodex";
 import { TodoList } from "./TodoList/TodoList";
 import WeatherApi from "./WeatherApi/WeatherApi";
+import { MoviesApp } from "./MoviesApp/MoviesApp";
 
 class App extends Component {
   constructor() {
@@ -39,6 +40,7 @@ class App extends Component {
           <MonstersRolodex/>
           {/* <TodoList/> */}
           {/* <WeatherApi/> */}
+          <MoviesApp/>
         </div>
       </>
     );

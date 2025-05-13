@@ -13,9 +13,15 @@ export const TodoList = () => {
     setInput("");
   }, [input]);
   const updateClickHandler = useCallback(() => {}, []);
-  const deleteClickHandler = useCallback((_,i) => {
-    setInputData(inputData.filter((_,index)=>index!==i));
-  }, []);
+  // const deleteClickHandler = useCallback((_,i) => {
+  //   setInputData(inputData.filter((_,index)=>index!==i));
+  // }, []);
+
+  const deleteClickHandler=(i)=>{
+   const delData=[...inputData];
+   delData.splice(i,1);
+   setInputData(delData);
+  };
 
   return (
     <>
@@ -40,3 +46,4 @@ export const TodoList = () => {
     </>
   );
 };
+
