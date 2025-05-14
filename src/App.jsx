@@ -1,9 +1,9 @@
 import { Component } from "react";
 import "./App.css";
-import MonstersRolodex from "./MonstersRolodexApplication/MonstersRolodex";
-import { TodoList } from "./TodoList/TodoList";
-import WeatherApi from "./WeatherApi/WeatherApi";
-import { MoviesApp } from "./MoviesApp/MoviesApp";
+import MonstersRolodex from "./Components/MonstersRolodexApplication/MonstersRolodex";
+import { TodoList } from "./Components/TodoList/TodoList";
+import WeatherApi from "./Components/WeatherApi/WeatherApi";
+import { MoviesApp } from "./Components/MoviesApp/MoviesApp";
 
 class App extends Component {
   constructor() {

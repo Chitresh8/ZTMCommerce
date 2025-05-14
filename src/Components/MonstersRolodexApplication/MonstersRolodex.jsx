@@ -1,4 +1,5 @@
 import { Component } from "react";
+import CardList from "./card-list/card-list.component";
 
 class MonstersRolodex extends Component {
   constructor() {
@@ -58,6 +59,7 @@ class MonstersRolodex extends Component {
             return <h1 key={el.id}>{el.name}</h1>;
           })}
         </div>
+        <CardList/>
       </>
     );
   }
