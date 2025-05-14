@@ -55,11 +55,11 @@ class MonstersRolodex extends Component {
             placeholder="Search Monsters"
             onChange={onSearchChange}
           />
-          {filteredMonsters.map((el) => {
+          {/* {filteredMonsters.map((el) => {
             return <h1 key={el.id}>{el.name}</h1>;
-          })}
+          })} */}
         </div>
-        <CardList/>
+        <CardList monsters={filteredMonsters}/>
       </>
     );
   }
