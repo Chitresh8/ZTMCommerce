@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>Vite + React</h1>
+      <marquee>React + Vite</marquee>
         <div className="card">
           <h1>
             Hello, My Name is {this.state.name.firstName}{" "}
