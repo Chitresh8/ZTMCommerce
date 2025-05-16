@@ -45,9 +45,9 @@ class MonstersRolodex extends Component {
     console.log("2");
     const { monsters, searchField } = this.state;
     const {onSearchChange}=this;
-    const filteredMonsters = monsters.filter((monster) => {
-      return monster.name.toLocaleLowerCase().includes(searchField);
-    });
+    const filteredMonsters = monsters.filter((monster) => 
+       monster.name.toLocaleLowerCase().includes(searchField)
+    );
     return (
       <>
       <h1 className='app-title'>Monsters Rolodex</h1>

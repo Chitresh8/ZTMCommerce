@@ -4,6 +4,7 @@ import MonstersRolodex from "./Components/MonstersRolodexApplication/MonstersRol
 import { TodoList } from "./Components/TodoList/TodoList";
 import WeatherApi from "./Components/WeatherApi/WeatherApi";
 import { MoviesApp } from "./Components/MoviesApp/MoviesApp";
+import MonstersRolodexFunctionalComponentApplication from "./Components/MonstersRolodexFCA/MonstersRolodexFCA";
 
 class App extends Component {
   constructor() {
@@ -17,8 +18,8 @@ class App extends Component {
   render() {
     return (
       <>
-      <marquee>React + Vite</marquee>
         <div className="card">
+          {/* <marquee>React + Vite</marquee>
           <h1>
             Hello, My Name is {this.state.name.firstName}{" "}
             {this.state.name.lastName}, I work at {this.state.company}.
@@ -36,11 +37,12 @@ class App extends Component {
             }}
           >
             Change Name
-          </button>
-          <MonstersRolodex/>
+          </button> */}
+          <MonstersRolodex />
           {/* <TodoList/> */}
           {/* <WeatherApi/> */}
-          <MoviesApp/>
+          {/* <MoviesApp/> */}
+          <MonstersRolodexFunctionalComponentApplication />
         </div>
       </>
     );
