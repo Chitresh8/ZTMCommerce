@@ -5,6 +5,7 @@ import { TodoList } from "./Components/TodoList/TodoList";
 import WeatherApi from "./Components/WeatherApi/WeatherApi";
 import { MoviesApp } from "./Components/MoviesApp/MoviesApp";
 import MonstersRolodexFunctionalComponentApplication from "./Components/MonstersRolodexFCA/MonstersRolodexFCA";
+import GithubUserFinder from "./Components/GithubUserFinderApplication/Github components/GithubUserFinder";
 
 class App extends Component {
   constructor() {
@@ -43,6 +44,7 @@ class App extends Component {
           {/* <WeatherApi/> */}
           {/* <MoviesApp/> */}
           <MonstersRolodexFunctionalComponentApplication />
+          <GithubUserFinder />
         </div>
       </>
     );

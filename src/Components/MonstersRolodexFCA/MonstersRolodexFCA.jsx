@@ -52,7 +52,7 @@ const MonstersRolodexFunctionalComponentApplication = () => {
         );
       })} */}
       <SearchBoxFC onChangeHandler={inputTypeHandler} placeholder="Search Monsters" className='monsters-search-box'/>
-      <CardListFC key={monsterProp.id} monsterProp={filteredMonsters}/>
+      <CardListFC monsterProp={filteredMonsters}/>
     </div>
   );
 };

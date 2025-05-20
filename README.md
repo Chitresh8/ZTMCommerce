@@ -423,3 +423,9 @@ class MonstersRolodex extends Component {
 }
 
 export default MonstersRolodex; -->
+
+
+Installed axios - > npm install axios
+Installed React Query (Tanstack Query) - > npm install @tanstack/react-query
+✅ (Optional) Install Devtools for debugging
+You can also install the React Query Devtools for better debugging: npm install @tanstack/react-query-devtools
